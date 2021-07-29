@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="on">
+    <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="AngSPA.css">
+    <title>Angular APP</title>
+</head>
+<body>
+<div class="main" ng-app="myList" ng-controller="myListController">
+    <h1>Item's List</h1>
+    <div class="addItem">
+        <input ng-model="newItem" placeholder="Add Item" class="addText">
+        <button ng-click="pushItem()">Add</button>
+    </div>
+    <ul>
+        <li ng-repeat="i in items">
+            {{i}}
+            <span ng-click="deleteitem($index)">x</span>
+        </li>
+        
+    
+       
+    </ul>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="AngSPA.js"></script>
+</body>
+</html>
