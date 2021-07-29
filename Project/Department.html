@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Hospital Management</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="Styles/style.css">
+
+   
+   </head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Hospital Management</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+               
+                <li>
+                    <a href="Home.html"  >Home</a>
+                    
+                </li>
+                <li  class="active">
+                    <a href="Department.html">Departments</a>
+                </li>
+                <li>
+                      <a href="Doctors.html">Doctors</a>
+                </li>
+                <li>
+                    <a href="Patients.html">Patients</a>
+                </li>
+                <li>
+                    <a href="Appoitments.html">Appointments</a>
+                 </li>
+                <li>
+                    <a href="login.html">Logout</a>
+                </li>
+                
+            </ul>
+
+           
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="toggles-btn ">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Home.html">Home</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+              
+            </nav>
+           
+                <button class="AddBtn" onclick="location.href='Add_dept.html'" type="button"><i class="fb fa fa-plus-square" aria-hidden="true"></i></button>
+          
+            <h1>Departments</h1>
+            <br>
+           <table>
+               <tr><td><ul>
+                   <lh>Department 1 <a href="Add_dept.html"><i class="edit-pen"></i></a></lh>
+                       <li>Doctor Names</li>
+                       
+                   </ul></td>
+               <td><ul>
+                   <lh>Department 2 <a href="Add_dept.html"><i class="edit-pen"></i></a></lh>
+                       <li>Doctor Names</li>
+                       
+</ul></td></tr>
+            
+            </table>
+           
+
+            
+        </div>
+    </div>
+
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
