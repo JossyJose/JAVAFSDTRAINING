@@ -1,0 +1,60 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background :pink;
+}
+
+.t1{
+    width:250%;
+    margin-top: 10px;
+}
+.svbtn{
+    color: aliceblue;
+    width: 100%;
+    margin-left: 140px;
+    background-color: green;
+    font-weight: 900;
+}
+.form-group{
+	margin-top: 10%;
+	margin-left: 20%;
+}
+.dlt{
+    font-weight: bolder; 
+    color: red; 
+    font-size: xx-large;
+    text-decoration: none;
+}
+.edt{
+    font-weight: bolder; 
+    color: blue;
+    font-size: xx-large;
+    text-decoration: none;
+   
+}
+.edt:after{
+     content:"\1F589";
+}
+.dlt:after{
+     content:"\1F5D1";
+}
+.addemp_btnlnk{
+	text-decoration: none;
+}
+.addemp_btn{
+background-color: green;	
+color: white;
+font-size: 15px;
+}
+
+.addbtn_lnk{
+	text-decoration: none;
+}
+.addbtn{
+	color: white;
+font-size: 15px;
+background-color: green;
+}
+.indx{
+	margin-left: 40%;
+	margin-top: 20%;
+}
