@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><title>Employee Management</title>
+
+<title>Employee Management</title>
+<style>
+
+.navbar-default .navbar-brand {
+    color: #fb0606;
+    font-weight: 900;
+}
+.btn1{
+ color: aliceblue;
+    width: 65%;
+    margin-left: 110px;
+    background-color: #7386d5;
+    font-weight: 900;
+}
+.nav {
+   
+    font-weight: bold;
+}
+tr > * + * {
+  padding-left: 3em;
+}
+
+.form-group {
+   
+    margin-inline: 30%;
+  
+    margin-top: 10%;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        
+      </button>
+      <a class="navbar-brand nav" href="#">Employee Management</a>
+    </div>
+
+   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+       <ul class="nav navbar-nav navbar-left">
+     
+        <li class="active"><a href="/">Home</a></li>
+          <li ><a th:href=@{newempform}>Add Employees</a></li>
+       <li ><a th:href=@{home}>View Employees</a></li> 
+      
+       <li ><a href="/employees">Micro Service View</a></li> 
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+<div class="form-group">
+<form action="#" th:action="@{/save}" th:object="${employee}"
+			method="POST">
+			
+			<table>
+                   <tr>
+                     <td>
+                        <label >First Name:</label>   
+                       </td><td>
+			<input type="hidden" th:field="*{id}" class="form-control" /><br>
+			
+			<input type="text" th:field="*{firstName}" class="form-control"><br>
+				</td>
+                        </tr> 
+                         <tr><td>
+                            <label > Last Name:</label>   
+                         </td><td>
+				<input type="text" th:field="*{lastName}" class="form-control"><br>
+				</td> 
+                        </tr> 
+                        <tr><td>
+                             <label >Email</label>
+                        </td><td>  
+				<input type="text" th:field="*{email}" class="form-control"><br>
+				</td> 
+                        </tr> 
+                            <tr>
+                                <td colspan="2">
+				
+				<button type="submit"class="form-control btn1" > Update Employee</button>
+				   </td>
+                        </tr> 
+                        </table>
+		</form>
+		</div>
+</body>
+</html>
