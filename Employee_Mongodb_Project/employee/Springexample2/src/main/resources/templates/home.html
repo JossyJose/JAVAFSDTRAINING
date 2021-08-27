@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><title>Employee Management</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <meta charset="ISO-8859-1">
+<title>Employee Management</title>
+<style>
+
+.navbar-default .navbar-brand {
+    color: #fb0606;
+    font-weight: 900;
+}
+.btn1{
+     color: aliceblue;
+    width: 12%;
+    margin-left: 10px;
+    background-color: #7386d5;
+    font-weight: 900;
+}
+.nav {
+   
+    font-weight: bold;
+}
+tr > * + * {
+  padding-left: 3em;
+}
+
+.form-group {
+   
+    margin-inline: 30%;
+  
+    margin-top: 10%;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        
+      </button>
+      <a class="navbar-brand nav" href="#">Employee Management</a>
+    </div>
+
+   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    
+       <ul class="nav navbar-nav navbar-left">
+     
+        <li class="active"><a href="/">Home</a></li>
+          <li ><a th:href=@{newempform}>Add Employees</a></li>
+       <li ><a th:href=@{home}>View Employees</a></li> 
+      
+       <li ><a href="/employees">Micro Service View</a></li> 
+      </ul>
+    </div>
+    
+  </div>
+</nav>
+<table    class="table">
+
+			<thead>
+				<tr>
+					<th>
+					
+							Employee First Name
+					</th>
+					<th>
+
+							Employee Last Name
+					</th>
+					<th>
+
+							Employee Email
+					</th>
+					<th>
+
+							Actions
+					</th>
+				
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee : ${listEmployees}">
+					<td th:text="${employee.firstName}"></td>
+					<td th:text="${employee.lastName}"></td>
+					<td th:text="${employee.email}"></td>
+					<td> <a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" ><i class="fa fa-pencil" style="font-size:36px"></i></a>
+					    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" > <i  class="fa fa-trash-o" style="font-size:36px;color:red"></i></a>
+					</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		<a th:href=@{/newempform} class="form-control btn1">Add Employees</a>
+</body>
+</html>
