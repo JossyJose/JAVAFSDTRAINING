@@ -1,0 +1,33 @@
+<div class="form-group">
+      <h1> Employee Details</h1>
+        <hr>
+        <br>
+<form (ngSubmit) = "onSubmit()" class="form">
+			<table>
+                   <tr>
+                     <td>
+                        <label >First Name:</label>   
+                       </td><td>
+			<input type="text" placeholder="Employee First Name" class="form-control form-con" [(ngModel)] = "employee.firstName" name="firstName" > <br>
+				</td>
+                        </tr> 
+                         <tr><td>
+                            <label > Last Name:</label>   
+                         </td><td>
+				<input type="text" placeholder="Employee Last Name" class="form-control form-con" [(ngModel)]= "employee.lastName" name="lastName"><br>
+				</td> 
+                        </tr> 
+                        <tr><td>
+                             <label >Email</label>
+                        </td><td>  
+				<input type="text" placeholder="Employee Email" class="form-control form-con" [(ngModel)]= "employee.email" name="email"><br>
+				</td> 
+                        </tr> 
+                            <tr>
+                                <td colspan="2">
+				<button type="submit" class="form-control form-con btn1"> Save Employee</button>
+				   </td>
+                        </tr> 
+				</table>
+		</form>
+      </div>

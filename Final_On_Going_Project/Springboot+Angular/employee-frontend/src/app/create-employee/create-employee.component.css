@@ -1,0 +1,26 @@
+ .form-control{
+    width: 200%;
+}
+.btn1{
+    color: aliceblue;
+    width: 128%;
+       margin-left: 110px;
+       background-color: #7386d5;
+       font-weight: 900;
+   }
+   .nav {
+      
+       font-weight: bold;
+   }
+   tr > * + * {
+     padding-left: 3em;
+   }
+   
+   .form-group {
+      
+       margin-inline: 30%;
+     
+     margin-top: 5%;
+       margin-bottom: 7%;
+   }
+  
