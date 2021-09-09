@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Update Medicine</title>
+<link rel="stylesheet" th:href="@{/style/style.css}">
+	    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+	<style>
+	.btn {
+    color: aliceblue;
+    width: 65%;
+    margin-left: 110px;
+    background-color: #7386d5;
+    font-weight: 900;
+}
+ a {
+    color: var(--white);
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+</style>
+   </head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Clinic Management</h3>
+            </div>
+
+             <ul class="list-unstyled components">
+               
+                <li>
+                    <a href="home"  >Home</a>
+                    
+                </li>
+                <li  class="active">
+                    <a href="addmedicine">Add Medicine</a>
+                </li>
+                <li>
+                      <a href="viewmedicine">View Medicine</a>
+                </li>
+                <li>
+                    <a href="addpatients">Add Patients</a>
+                </li>
+                <li>
+                      <a href="viewpatients">View Patients</a>
+                </li>
+                <li>
+                      <a href="adddoctor">Add Doctor</a>
+                </li>
+                <li>
+                      <a href="viewdoctor">View Doctor</a>
+                </li>
+                <li>
+                    <a href="bookappointment">Appointments</a>
+                 </li>
+                  <li>
+                    <a href="viewappointment">View Appointments</a>
+                 </li>
+                 <li>
+                    <a href="employees">View employee</a>
+                 </li>
+                <li>
+                    <a href="/">Logout</a>
+                </li>
+                
+            </ul>
+
+           
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="toggles-btn ">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="home">Home</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="inde">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+              
+            </nav>
+           
+                
+          
+            <h1>Update Doctor</h1>
+            <br> 
+<form action="#" th:action="@{/dsave}" th:object="${doctor}"
+			method="POST">
+			
+			<!-- Add hidden form field to handle update -->
+			
+			
+			<table>
+		
+		<tr><td>
+			 <label >Doctor Name</label>
+			  </td><td>
+				  <input type="hidden" th:field="*{id}" />
+			 <input type="text" th:field="*{name}" class="form-control"  placeholder="Doctor Name" >
+				</td>
+			  </tr>
+			  <tr><td>
+		<label>Specialization</label>
+		 </td><td>
+		<input type="text" th:field="*{specialization}" name="specialization" class="form-control" placeholder="Specialization">
+				
+				</td>
+			  </tr>
+			  <tr><td>
+		<label>Address</label>
+		 </td><td>
+		<input type="text" th:field="*{address}" name="address" class="form-control" placeholder="Address" >
+				
+				</td>
+			  </tr>
+			  <tr><td>
+		<label>Phone No</label>
+		 </td><td>
+		<input type="text" th:field="*{phoneno}" name="phoneno" class="form-control" placeholder="Phone No" >
+				
+				</td>
+			  </tr>
+			 
+
+		<tr>
+				    <td colspan="2">
+						<button type="submit" class="form-control btn"> Upadte</button>
+		</td>
+		</tr>
+		</table>
+		</form>
+</body>
+</html>

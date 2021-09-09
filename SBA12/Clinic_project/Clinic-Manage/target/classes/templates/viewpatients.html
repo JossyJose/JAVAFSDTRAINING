@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Medicine</title>
+<link rel="stylesheet" th:href="@{/style/style.css}">
+	    
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<style>
+	.btn {
+    color: aliceblue;
+    width: 65%;
+    margin-left: 110px;
+    background-color: #7386d5;
+    font-weight: 900;
+}
+ a {
+    color: var(--white);
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+</style>
+   </head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Clinic Management</h3>
+            </div>
+
+             <ul class="list-unstyled components">
+               
+                <li>
+                    <a href="home"  >Home</a>
+                    
+                </li>
+                <li  class="active">
+                    <a href="addmedicine">Add Medicine</a>
+                </li>
+                <li>
+                      <a href="viewmedicine">View Medicine</a>
+                </li>
+                <li>
+                    <a href="addpatients">Add Patients</a>
+                </li>
+                <li>
+                      <a href="viewpatients">View Patients</a>
+                </li>
+                <li>
+                      <a href="adddoctor">Add Doctor</a>
+                </li>
+                <li>
+                      <a href="viewdoctor">View Doctor</a>
+                </li>
+                <li>
+                    <a href="bookappointment">Appointments</a>
+                 </li>
+                  <li>
+                    <a href="viewappointment">View Appointments</a>
+                 </li>
+                 <li>
+                    <a href="employees">View employee</a>
+                 </li>
+                <li>
+                    <a href="/">Logout</a>
+                </li>
+                
+            </ul>
+           
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="toggles-btn ">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="home">Home</a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+              
+            </nav>
+           
+                
+          
+            <h1>List Patients</h1>
+            <br> 
+	<table border="1" class="table">
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+
+				<th>Email</th>
+				<th>Phone Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="patients : ${lisPatients}">
+				<td th:text="${patients.fname}"></td>
+				<td th:text="${patients.lname}"></td>
+				<td th:text="${patients.email}"></td>
+				<td th:text="${patients.pno}"></td>
+
+				<td><a th:href="@{/updatepatients/{id}(id=${patients.id})}"><i class="edit-pen"></i></a> <a
+					th:href="@{/deletePatients/{id}(id=${patients.id})}"><i class="dlt-btn"></i></a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	
+</div>
+	</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+
+   
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+   
+    
+</body>
+
+</html>
